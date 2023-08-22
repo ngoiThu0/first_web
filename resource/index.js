@@ -2,7 +2,9 @@ const express = require('express')
 const handlebars = require('express-handlebars')
 const morgan = require('morgan')
 const path = require('path')
+const routes = require('./routes/init')
 const app = express()
+
 
 console.log(path.join(__dirname, './views'))
 app.use(express.static(path.join(__dirname, '../public')))
@@ -19,14 +21,6 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs')
 app.set('views', './resource/views')
 
-
-app.get('/home', (req, res) =>{
-  res.render('home')
-  console.log(path.join(__dirname, 'views/partials'))
-})
-
-app.get('/', (req, res) => {    
-  res.render('home')
-})
+routes(app)
 
 app.listen(3000)
