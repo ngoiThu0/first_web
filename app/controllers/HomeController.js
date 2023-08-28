@@ -1,6 +1,11 @@
 class HomeController{
     index(req, res){
-        res.render('home')
+        if(req.query.xuanquang == 'xqq'){
+            res.render('home')
+        }
+        else {
+            res.render('error')
+        }
     }
 }
 

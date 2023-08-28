@@ -1,1 +1,9 @@
-<h1>here save picture</h1>
+<div class="items">
+    {{#each pictures}}
+        <div class="item">
+            Picture: {{this._doc.name}} <br>
+            Description: {{this._doc.belongTo}} <br>
+            <img src="{{this._doc.path}}">
+        </div>
+    {{/each}}
+</div>

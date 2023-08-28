@@ -1,6 +1,10 @@
+const PictureSchema = require('../../models/Picture')
+
 class PictureController{
-    index(req, res){
-        res.render('picture')
+    async index(req, res){
+        let pictures = await PictureSchema.find({})
+        console.log(pictures)
+        res.render('picture', {pictures: pictures})
     }
 }
 
