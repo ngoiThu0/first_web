@@ -4,7 +4,7 @@ class HomeController{
             res.render('home')
         }
         else {
-            res.render('error')
+            res.render('home')
         }
     }
 }
